@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ryan-api
-  spec:
-    selector:
-      matchLabels:
-        app: ryan-api
+spec:
+  selector:
+    matchLabels:
+      app: ryan-api
   template:
     metadata:
       labels:
