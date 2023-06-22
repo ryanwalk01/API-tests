@@ -12,30 +12,30 @@ metadata:
         app: ryan-api
     spec:
       containers:
-        - name: ryan-api
-          image: us-docker.pkg.dev/group3-iam-project/ryan-api/api-tests
-          ports:
-            - containerPort: 3000
-          resources:
-            limits:
-              cpu: ".5"
-              memory: "500Mi"
-            requests:
-              cpu: ".25"
-              memory: "250Mi"
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 3000
-              scheme: HTTP
-            failureThreshold: 1
-            periodSeconds: 10
-            timeoutSeconds: 10
-          startupProbe:
-            httpGet:
-              path: /
-              port: 3000
-              scheme: HTTP
-            failureThreshold: 30
-            periodSeconds: 10
-            timeoutSeconds: 10
+      - name: ryan-api
+        image: us-docker.pkg.dev/group3-iam-project/ryan-api/api-tests
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            cpu: ".5"
+            memory: "500Mi"
+          requests:
+            cpu: ".25"
+            memory: "250Mi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          failureThreshold: 1
+          periodSeconds: 10
+          timeoutSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /
+            port: 3000
+            scheme: HTTP
+          failureThreshold: 30
+          periodSeconds: 10
+          timeoutSeconds: 10
